@@ -53,15 +53,15 @@
   </div>
 
   <script>
-    // 👇 Use relative path instead of localhost (works on GitHub Pages + deployment)
-    const API_URL = ""; // same origin
+    // 👇 Backend server URL (change this for deployment)
+    const API_URL = "http://localhost:10000"; // backend server
 
     let todos = [];
 
     // Fetch todos from backend
     async function fetchTodos() {
       try {
-        const res = await fetch(`${API_URL}/`);
+        const res = await fetch(`${API_URL}/todos`);
         todos = await res.json();
         renderTodos();
       } catch (err) {
